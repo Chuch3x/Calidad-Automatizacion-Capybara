@@ -2,7 +2,8 @@ Feature:
     As an online shopper i want to access to a product so I 
     I want to know how the page was made,
     so I have confidence when using the site.
-‌
+
+‌@maximize
 Scenario: Look for the information of the site
     Given I am at GMO online site
     When I click the "About The GMO Site" button
