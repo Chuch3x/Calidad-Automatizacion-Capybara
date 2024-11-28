@@ -20,7 +20,7 @@ Este proyecto tiene el fin de relaizar preubas automatizadas utilizando las herr
 >    - `gem install capybara-screenshot`
 
 > [!NOTE]
-> Para correr los features utilice los siguientes comandos:""
+> Para correr los features utilice los siguientes comandos:
 >
 > - cucumber features\siteInformation.feature
 > - cucumber features\browserTestPage.feature
