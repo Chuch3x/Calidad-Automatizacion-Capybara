@@ -1,4 +1,4 @@
-Given(/^I am on the landing page of GMO$/) do
+Given(/^I am at the landing page of GMO$/) do
     visit 'https://demo.borland.com/gmopost/'
 end
 

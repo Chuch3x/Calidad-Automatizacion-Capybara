@@ -5,7 +5,7 @@ Feature:
 
 ‌@maximize
 Scenario: Look for the browser test page of the site
-    Given I am on the landing page of GMO
+    Given I am at the landing page of GMO
     When I click the button "Browser Test Page" 
     Then I see the list of compatible browsers
     

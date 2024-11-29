@@ -3,8 +3,8 @@ Feature: As a customer who wants to buy some products
   so I can see the list of available products
 
 Background:
-  Given I am on the online catalog
-  When I click on the button "Enter GMO OnLine"
+  Given I am at the landing page of GMO
+  When I click the button "Enter GMO OnLine"
 
 @maximize
 Scenario Outline: Look for a product in the GMO store
