@@ -20,6 +20,7 @@ Scenario Outline: Fill the quantity of just one product
     | Hiking Boots           | 1     |  
     | Back Country Shorts    | 1     |
 
+@maximize
 Scenario: Fill the quantity of six different products
 	And I write the quantities for the product with the table below 
 

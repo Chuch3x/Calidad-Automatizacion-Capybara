@@ -2,6 +2,7 @@ Feature: As a customer who wants to buy some products
   I want to access the GMO store
   so I can see the list of available products
 
+@maximize
 Background:
   Given I am at the landing page of GMO
   When I click the button "Enter GMO OnLine"

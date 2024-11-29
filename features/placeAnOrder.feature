@@ -2,6 +2,7 @@ Feature: As an online shopper
   I want to fill the billing form 
   so I can place my order successfully
 
+@maximize
 Background:
   When I am at the landing page of GMO
   When I click the button "Enter GMO OnLine"
