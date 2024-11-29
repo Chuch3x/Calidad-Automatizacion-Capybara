@@ -1,6 +1,6 @@
 Feature: As an online shopper 
-  I want the system to calculate totals, taxes and shipping costs
-  so I can see the final ammout I need to pay
+  I want the system to automatically calculate the final amount
+  so I can see how much I need to pay
 
 Background:
   Given I am at the landing page of GMO
@@ -23,14 +23,13 @@ Scenario Outline: Fill the quantity of just one product
 @maximize
 Scenario: Fill the quantity of six different products
 	And I write the quantities for the product with the table below 
-
     | product                | input |   
-    | 3 Person Dome Tent     | 15    | 
-    | External Frame Backpack| 7     |  
+    | 3 Person Dome Tent     | 2     | 
+    | External Frame Backpack| 3     |  
     | Glacier Sun Glasses    | 2     | 
-    | Padded Socks           | 19    | 
-    | Hiking Boots           | 12    |  
-    | Back Country Shorts    | 18    |
+    | Padded Socks           | 10    | 
+    | Hiking Boots           | 5     |  
+    | Back Country Shorts    | 3     |
 
     When I click the button "Place An Order"
     Then I see the Product Total for all the products
