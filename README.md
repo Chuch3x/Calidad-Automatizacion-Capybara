@@ -22,5 +22,8 @@ Este proyecto tiene el fin de relaizar preubas automatizadas utilizando las herr
 > [!NOTE]
 > Para correr los features utilice los siguientes comandos:
 >
-> - cucumber features\siteInformation.feature
-> - cucumber features\browserTestPage.feature
+> - cucumber
+>
+> o si solo deseas ejecutar un feature file en especifico:
+>
+> - cucumber features\[nombreDelArchivo].feature
