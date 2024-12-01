@@ -12,16 +12,6 @@ When(/^I write the quantities for the products as the table below:$/) do |table|
   end
 end
 
-When('I click on the button {string}') do |button_text|
-  click_button(button_text)
-  sleep(2)
-end
-
-And('I click on the button {string} Button') do |button_text|
-  click_button(button_text)
-  sleep(2)
-end
-
 Then(/^I see a form on the left side of the screen with the following fields:$/) do |table|
     expected_form_values = table.raw.flatten
     form_values_selector = "body > form:nth-child(3) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1)"
@@ -79,10 +69,6 @@ And(/^I fill the form with the following data:$/) do |table|
   When(/^I check the option to ship the order to the same person$/) do
     expect(page).to have_field('shipSameAsBill', type: 'checkbox')
     check('shipSameAsBill')
-  end
-  
-  When(/^I click on the "Place The order" Button$/) do
-    click_button('bSubmit')
   end
 
   And(/^I check the option "Ship To: Same as 'Bill To'"$/) do

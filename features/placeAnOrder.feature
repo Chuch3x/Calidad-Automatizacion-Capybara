@@ -42,5 +42,5 @@ Scenario: Fill out the Billing form correctly with American Express card
     | Card Number | 1234-123456-12345  |
     | Expiration  | 11/26              |
   And I check the option "Ship To: Same as 'Bill To'"
-  And I click on the button "Place The Order"
+  And I click the button "Place The Order"
   Then I see the "OnLine Store Receipt"
