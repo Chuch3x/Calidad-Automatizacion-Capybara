@@ -1,6 +1,6 @@
 Feature: As an online shopper
   I want to get an error when I fill in some field incorrectly
-  So I can continue with my purchase
+  So I can't continue with my purchase if something is wrong
 
 Background:
   Given I am at the landing page of GMO
