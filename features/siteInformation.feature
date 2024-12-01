@@ -8,7 +8,6 @@ Scenario: Look for the information of the site
     Given I am at the landing page of GMO
     When I click the button "About The GMO Site"
     Then I see the list of technologies used for the site
-    
         | HTML 3.2 |
         | HTML Browser Extensions |
         | Animation |
