@@ -8,7 +8,6 @@ Scenario: Look for the browser test page of the site
     Given I am at the landing page of GMO
     When I click the button "Browser Test Page" 
     Then I see the list of compatible browsers
-    
         | Internet Explorer 3.0 |
         | Blinking Text |
         | dot bullets |
