@@ -44,3 +44,21 @@ Scenario: Fill out the Billing form correctly with American Express card
   And I check the option "Ship To: Same as 'Bill To'"
   And I click the button "Place The Order"
   Then I see the "OnLine Store Receipt"
+
+@maximize
+Scenario Outline: Fill the form inputs with none values
+   When I leave the field <Field> empty
+  And I click the button "Place The Order"
+  Then I see a pop-up with the warning "This is a required field."
+
+  Examples:
+    | Field       |
+    | Name        |
+    | Address     |
+    | City        |
+    | State       |
+    | Zip         |
+    | Phone       |
+    | E-mail      |
+    | Card Number |
+    | Expiration  |

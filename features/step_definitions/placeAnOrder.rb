@@ -80,3 +80,36 @@ And(/^I fill the form with the following data:$/) do |table|
 Then('I see the {string}') do |content|
   expect(page).to have_content(content, wait: 10)
 end
+
+
+When(/^I leave the field (.+) empty$/) do |field|
+  case field
+  when "Name"
+    fill_in 'billName', with: ''
+  when "Address"
+    fill_in 'billAddress', with: ''
+  when "City"
+    fill_in 'billCity', with: ''
+  when "State"
+    fill_in 'billState', with: ''
+  when "Zip"
+    fill_in 'billZipCode', with: ''
+  when "Phone"
+    fill_in 'billPhone', with: ''
+  when "E-mail"
+    fill_in 'billEmail', with: ''
+  when "Card Number"
+    fill_in 'CardNumber', with: ''
+  when "Expiration"
+    fill_in 'CardDate', with: ''
+  else
+    raise "Field '#{field}' is not recognized or not implemented in the test case"
+  end
+end
+
+Then(/^I see a pop-up with the warning "([^"]*)"$/) do |message|
+  alert = page.driver.browser.switch_to.alert
+  expect(alert.text).to eq(message)
+  alert.accept
+end
+
