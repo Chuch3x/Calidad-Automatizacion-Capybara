@@ -35,3 +35,17 @@ Scenario: Fill the quantity of six different products
     Then I see the Product Total for all the products
     And I see the correct Sales Tax for the order
     And I see the Grand Total calculated correctly
+
+@maximize
+Scenario: No fill the quantity of six different products
+  And I don't write any quantity for any product 
+    | product                | input |   
+    | 3 Person Dome Tent     | 0     | 
+    | External Frame Backpack| 0     |  
+    | Glacier Sun Glasses    | 0     | 
+    | Padded Socks           | 0     | 
+    | Hiking Boots           | 0     |  
+    | Back Country Shorts    | 0     |
+
+  When I click the button "Place An Order"
+  Then I see a pop up with a warning message

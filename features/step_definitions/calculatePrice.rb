@@ -116,3 +116,30 @@ Then(/^I see the Product Total for all the products$/) do
         expect(product_total).to eq(expected_product_total.round(2))
     end
 end
+
+And(/^I don't write any quantity for any product$/) do |table|
+    data = table.rows_hash  
+    data.each_pair do |key, value|
+      case key
+      when "3 Person Dome Tent"
+        fill_in 'QTY_TENTS', :with => value
+      when "External Frame Backpack"
+        fill_in 'QTY_BACKPACKS', :with => value
+      when "Glacier Sun Glasses"
+        fill_in 'QTY_GLASSES', :with => value
+      when "Padded Socks"
+        fill_in 'QTY_SOCKS', :with => value
+      when "Hiking Boots"
+        fill_in 'QTY_BOOTS', :with => value
+      when "Back Country Shorts"
+        fill_in 'QTY_SHORTS', :with => value
+      end
+    end
+  end
+  
+  Then(/^I see a pop up with a warning message$/) do
+    alert = page.driver.browser.switch_to.alert
+    expect(alert.text).to eq("Please Order Something First")
+    alert.accept
+  end
+  
