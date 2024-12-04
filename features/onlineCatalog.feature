@@ -6,7 +6,7 @@ Background:
   Given I am at the landing page of GMO
   When I click the button "Enter GMO OnLine"
 
-@maximize
+@maximize @slow
 Scenario Outline: Look for a product in the GMO store
   Then I see a list of the available products
     | 3 Person Dome Tent      |
