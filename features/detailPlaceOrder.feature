@@ -4,7 +4,7 @@ Feature: As a person in the Catalog
 
 Background:
   Given I am at the landing page of GMO
-  And I click the button "Enter GMO OnLine"
+  When I click the button "Enter GMO OnLine"
 
 @maximize
 Scenario: To see information of the order

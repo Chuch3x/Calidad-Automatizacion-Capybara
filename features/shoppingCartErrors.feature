@@ -11,7 +11,6 @@ Scenario Outline: Fill the quantity input with letters
   And I write "<input>" in the input box of the product "<product>"
   When I click the button "Place An Order"
   Then I receive a notification "Please enter only digits in this field."
-
   Examples:
     | product                | input | 
     | 3 Person Dome Tent     | dos   |
@@ -67,7 +66,6 @@ Scenario Outline: Fill the quantity input with decimals
   And I write "<input>" in the input box of the product "<product>"
   When I click the button "Place An Order"
   Then I receive a notification "Please enter only digits in this field."
-
   Examples:
     | product                | input | 
     | 3 Person Dome Tent     | -111   |

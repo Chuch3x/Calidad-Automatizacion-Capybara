@@ -19,10 +19,10 @@ Scenario: Clear all product quantities in the form
         | Back Country Shorts    | 600   |  
     When I click the button "Reset"  
     Then the form looks like the following table  
-        | product                | input |  
-        | 3 Person Dome Tent     | 0     |  
-        | External Frame Backpack| 0     |  
-        | Glacier Sun Glasses    | 0     |  
+        | product                | input |
+        | 3 Person Dome Tent     | 0     |
+        | External Frame Backpack| 0     |
+        | Glacier Sun Glasses    | 0     |
         | Padded Socks           | 0     |  
         | Hiking Boots           | 0     |  
         | Back Country Shorts    | 0     |
