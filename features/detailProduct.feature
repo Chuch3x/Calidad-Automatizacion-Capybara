@@ -6,6 +6,7 @@ Background:
   Given I am at the landing page of GMO
   When I click the button "Enter GMO OnLine"
 
+  @slow @maximize
   Scenario Outline: Look for a product description in the borland store
     And I click on the product "<product>"
     Then I should see its description "<description>"

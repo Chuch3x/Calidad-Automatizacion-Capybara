@@ -5,3 +5,8 @@ end
 Before '@maximize' do
     page.driver.browser.manage.window.maximize
 end
+
+AfterStep('@slow') do
+    sleep 1
+  end
+  
