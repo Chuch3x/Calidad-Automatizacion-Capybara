@@ -1,11 +1,9 @@
-# feature/borland_store.feature
-
 Feature: As a buyer 
   I want to see the description of a product
   so I see the information of all products
 
 Background:
-  When I am at the landing page of GMO
+  Given I am at the landing page of GMO
   When I click the button "Enter GMO OnLine"
 
   Scenario Outline: Look for a product description in the borland store
