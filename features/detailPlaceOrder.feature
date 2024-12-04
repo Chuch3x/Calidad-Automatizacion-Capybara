@@ -3,8 +3,8 @@ Feature: As a person in the Catalog
   so I see the information of the place order
 
 Background:
-  When I am at the landing page of GMO
-  When I click the button "Enter GMO OnLine"
+  Given I am at the landing page of GMO
+  And I click the button "Enter GMO OnLine"
 
 @maximize
 Scenario: To see information of the order
