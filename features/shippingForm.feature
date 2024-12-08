@@ -7,7 +7,7 @@ Background:
   When I click the button "Enter GMO OnLine"
 
 @maximize
-Scenario Outline: Fill the form with data to be copied in the shipping form
+Scenario: Fill the form with data to be copied in the shipping form
   And I write "<quantity>" in the input box of the product "<product>"
   When I click the button "Place An Order"
   And I see the summary of my purchase
