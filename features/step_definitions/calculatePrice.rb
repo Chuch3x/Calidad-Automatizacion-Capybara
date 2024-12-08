@@ -142,7 +142,7 @@ And(/^I don't write any quantity for any product$/) do |table|
     end
   end
   
-  Then(/^I see a pop up with a warning message$/) do
+  Then(/^I see a pop up with a warning message "Please Order Something First"$/) do
     alert = page.driver.browser.switch_to.alert
     expect(alert.text).to eq("Please Order Something First")
     alert.accept

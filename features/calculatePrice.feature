@@ -54,4 +54,4 @@ Scenario: No fill the quantity of six different products
     | Back Country Shorts    | 0     |
 
   When I click the button "Place An Order"
-  Then I see a pop up with a warning message
+  Then I see a pop up with a warning message "Please Order Something First"
