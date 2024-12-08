@@ -1,5 +1,3 @@
-require 'selenium-webdriver'
-
 And(/^I write "(.*)" in the input box of the product "(.*)"$/) do |input, product|
   within('body > form > table > tbody > tr:nth-child(2) > td > div > center > table > tbody') do
     row = find('tr', text: product)
@@ -98,25 +96,32 @@ And(/^I see the Grand Total calculated correctly$/) do
     end
 end
 
-Then(/^I see the Product Total for all the products$/) do
+Then(/^I see the Product Total for all the products as the table show below$/) do |table|
     summary_table_selector = "body > form:nth-child(3) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > div:nth-child(1) > center:nth-child(1) > table:nth-child(1)"
-    within(summary_table_selector) do 
-        rows = all("tr")
-        expected_product_total = 0.0 
-        rows.each_with_index do |row, index|
-            next if index == 0
-            cells = row.all('td')
-            if cells.count == 5
-                total_price = cells[4].text.strip.gsub(/[^\d\.]/, '').to_f
-                expected_product_total += total_price
-            end
+    
+    within(summary_table_selector) do
+      rows = all("tr")
+      expected_data = table.hashes.each_with_object({}) do |row, hash|
+        hash[row['product']] = row['price'].to_f
+      end
+      
+      rows.each_with_index do |row, index|
+        next if index == 0
+        
+        cells = row.all('td')
+        if cells.count == 5
+          product_name = cells[0].text.strip
+          calculated_price = cells[4].text.strip.gsub(/[^\d\.]/, '').to_f
+          if expected_data.key?(product_name)
+            expected_price = expected_data[product_name]
+            expect(calculated_price).to eq(expected_price), 
+              "El precio calculado para '#{product_name}' no coincide. " \
+              "Esperado: #{expected_price}, Calculado: #{calculated_price}"
+          end
         end
-        cells = rows[rows.count - 4].all('td') 
-        product_total = cells[2].text.strip.gsub(/[^\d\.]/, '').to_f
-        expect(product_total).to eq(expected_product_total.round(2))
+      end
     end
-end
-
+  end
 And(/^I don't write any quantity for any product$/) do |table|
     data = table.rows_hash  
     data.each_pair do |key, value|
