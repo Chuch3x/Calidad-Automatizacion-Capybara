@@ -20,6 +20,7 @@ Around do |scenario, block|
 end
   
 BeforeAll do
+    Capybara.app_host = "https://demo.borland.com/gmopost/"
     puts "<--- Starting the test suite --->\n\n"
 end
   
