@@ -7,6 +7,12 @@ class Page
       BrowserTest.new
     end
     def site_information_page
-        SiteInformation.new
-      end
+        SiteInformation.new  
+    end
+    def detail_place_order_page
+        DetailPlaceOrderPage.new
+    end
+    def detail_product_page
+        DetailProductPage.new
+    end
   end
