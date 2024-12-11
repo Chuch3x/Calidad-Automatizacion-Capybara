@@ -21,4 +21,16 @@ class Page
     def reset_feature_page
         ResetFeaturePage.new
     end
+    def shipping_form_page
+        ShippingFormPage.new
+    end
+    def shopping_cart_errors_page
+        ShoppingCartErrorsPage.new
+    end
+    def place_an_order_page
+        PlaceAnOrderPage.new
+    end
+    def calculate_price_page
+        CalculatePricePage.new
+    end
   end
