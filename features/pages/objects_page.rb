@@ -15,4 +15,10 @@ class Page
     def detail_product_page
         DetailProductPage.new
     end
+    def online_catalog_page
+        OnlineCatalogPage.new
+    end
+    def reset_feature_page
+        ResetFeaturePage.new
+    end
   end
