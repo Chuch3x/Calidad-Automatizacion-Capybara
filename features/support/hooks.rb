@@ -1,3 +1,5 @@
+require_relative '../pages/objects_page'
+
 After do 
     Capybara.current_session.driver.quit
 end
@@ -33,5 +35,7 @@ After do |scenario|
 end
   
 Before do |scenario|
-    puts "Scenario completed: #{scenario.name}"
-end
+    @page = Page.new
+    puts "Scenario started: #{scenario.name}"
+  end
+
